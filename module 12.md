@@ -12,12 +12,31 @@ To write a C program to display stack elements using linked list.
 7.	Move to the next node using the next pointer.
  
 ## Program:
-
-//type your code here
+```
+struct Node   
+{  
+int data;  
+struct Node *next;  
+}*head;  
+void display()  
+{  
+    if(head==NULL)
+    {
+        printf("No elements in the list\n");
+        return ;
+    }
+    struct Node *temp=head;
+    while(temp!=NULL)
+    {
+        printf("%c\n",temp->data);
+        temp=temp->next;
+    }
+}
+```
 
 ## Output:
+![image](https://github.com/user-attachments/assets/cbde07ad-1162-453b-bae2-a3aa1a0b52b4)
 
-//paste your output here
 
 
 ## Result:
@@ -37,14 +56,30 @@ To write a C program to pop an element from the given stack using liked list.
 4.	Set head to point to the next node in the stack.
  
 ## Program:
-
-//type your code here
+```
+struct Node   
+{  
+float data;  
+struct Node *next;  
+}*head;  
+void pop()  
+{ 
+    if(head==NULL)
+    {
+        printf("stack is empty\n");
+        return;
+    }
+    else
+    {
+        struct Node*temp=head;
+        head=head->next;
+        free(temp);
+    }
+}
+```
 
 ## Output:
-
-//paste your output here
-
-
+![image](https://github.com/user-attachments/assets/3eb660d4-f178-4009-a12f-a56e380e04dd)
 
 ## Result:
 Thus, the program to pop an element from the given stack using liked list is verified successfully.
