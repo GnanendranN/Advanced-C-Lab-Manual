@@ -44,8 +44,7 @@ Thus, the program to display stack elements using linked list is verified succes
 
 
 
-# EXP.NO 27: C PROGRAM TO POP AN ELEMENT FROM THE GIVEN STACK USING 
-LINKED LIST.
+# EXP.NO 27: C PROGRAM TO POP AN ELEMENT FROM THE GIVEN STACK USING LINKED LIST.
 ## Aim:
 To write a C program to pop an element from the given stack using liked list.
 
@@ -96,12 +95,30 @@ To write a C program to display queue elements using linked list.
 5.	End the display function.
  
 ## Program:
-
-//type your code here
-
+```
+struct Node
+{
+   char data;
+   struct Node *next;
+}*front=NULL,*rear=NULL;
+void display()
+{
+    if(rear==NULL)
+    {
+        printf("queue is empty\n");
+        return;
+    }
+    struct Node *temp=front;
+    printf("queue elements:\n");
+    while(temp!=NULL)
+    {
+        printf("%c\n",temp->data);
+        temp=temp->next;
+    }
+}
+```
 ## Output:
-
-//paste your output here
+![image](https://github.com/user-attachments/assets/6311437b-3014-4ac0-888a-bdbe57990126)
 
 ## Result:
 Thus, the program to display queue elements using linked list is verified successfully.
@@ -122,12 +139,36 @@ To write a C program to insert elements in queue using linked list
 6.	End of Enqueue Operation
  
 ## Program:
-
-//type your code here
+```
+struct Node
+{
+   int data;
+   struct Node *next;
+   struct Node *prev;
+}*front=NULL,*rear=NULL;
+void enqueue(int data)
+{
+    struct Node *newNode=(struct Node*)malloc(sizeof(struct Node));
+    newNode->data=data;
+    newNode->next=NULL;
+    if(rear==NULL)
+    {
+        front=newNode;
+        rear=newNode;
+    }
+    else
+    {
+        rear->next=newNode;
+        newNode->prev=rear;
+        rear=newNode;
+    }
+}
+```
 
 ## Output:
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/790e7d5c-4f7c-42c3-bb3b-24cc32756c3f)
+
 
 ## Result:
 Thus, the program to insert elements in queue using linked list is verified successfully.
@@ -149,13 +190,27 @@ o	If the queue is empty (i.e., the front pointer is NULL), return an error or a 
 o	If the queue is not empty, return the data stored in the front node of the linked list (i.e., the element at the head of the queue).
 
 ## Program:
-
-//type your code here
-
+```
+struct Node
+{
+   float data;
+   struct Node *next;
+}*front=NULL,*rear=NULL;
+void peek()
+{
+    if(rear==NULL)
+    {
+        printf("stack is empty\n");
+        return;
+    }
+    else
+    {
+        printf("%.2f",front->data);
+    }
+}
+```
 ## Output:
-
-//paste your output here
-
+![image](https://github.com/user-attachments/assets/a9f02510-a2d6-452f-bf1b-0724eabbe0aa)
 
 
 ## Result:
